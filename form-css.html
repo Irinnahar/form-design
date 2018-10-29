@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form design</title>
+    <style>
+        section {
+  height: 100vh;
+  background: linear-gradient(45deg, rgba(60, 205, 187, 0.90),
+    rgba(23, 208, 255, 0.90)),
+    #21a194 url(http://quomodosoft.com/appro/wp-content/uploads/2018/03/header-dew.png) center bottom/100% auto no-repeat scroll;
+  color: white;
+}
+  #login-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    #content {
+        width: 35%;
+      border: 1px solid rgba(204, 204, 204, 0.361);
+      background-color: rgba(220, 220, 220, 0.226);
+
+     
+}
+      h3 {
+        text-align: center;
+        padding: 50px 0 10px;
+        font-weight: 400;
+      }
+
+      form {
+        padding: 30px;
+}
+        .group {
+          position: relative;
+          margin-bottom: 45px;
+        }
+
+        input {
+          font-size: 14px;
+          padding: 10px 10px 10px 5px;
+          display: block;
+          width: 100%;
+          border: none;
+          border-bottom: 1px solid #d9dfe4;
+          background: none;
+          -webkit-appearance: none;
+        }
+
+        input:focus {
+          outline: none;
+        }
+
+        /* LABEL ======================================= */
+        label {
+          font-size: 14px;
+          font-weight: normal;
+          position: absolute;
+          pointer-events: none;
+          left: 5px;
+          top: 15px;
+          color: rgb(248, 249, 250);
+          transition: 0.2s ease all;
+          -moz-transition: 0.2s ease all;
+          -webkit-transition: 0.2s ease all;
+        }
+
+        /* active state */
+        input:focus~label,
+        input:valid~label {
+          top: -20px;
+          font-size: 14px;
+          color: rgb(235, 235, 238);
+        }
+        input:required, input:invalid  {
+            box-shadow:none;
+        }
+       
+        
+
+        /* BOTTOM BARS ================================= */
+        .bar {
+          position: relative;
+          display: block;
+          width: 100%;
+        }
+
+        .bar:before,
+        .bar:after {
+          content: '';
+          height: 1px;
+          width: 0;
+
+          position: absolute;
+          background: rgb(255, 255, 255);
+          transition: 0.2s ease all;
+          -moz-transition: 0.2s ease all;
+          -webkit-transition: 0.2s ease all;
+        }
+
+        .bar:before {
+          left: 50%;
+        }
+
+        .bar:after {
+          right: 50%;
+        }
+
+        /* active state */
+        input:focus~.bar:before,
+        input:focus~.bar:after {
+          width: 50%;
+        }
+
+        /* HIGHLIGHTER ================================== */
+        .highlight {
+          position: absolute;
+          height: 60%;
+          width: 100px;
+          top: 25%;
+          left: 0;
+          pointer-events: none;
+          opacity: 0.5;
+        }
+
+        /* active state */
+        input:focus~.highlight {
+          -webkit-animation: inputHighlighter 0.5s ease;
+          -moz-animation: inputHighlighter 0.5s ease;
+          animation: inputHighlighter 0.5s ease;
+        }
+
+        div#submit_btn {
+          padding: 0 0 15px;
+          width: 100%;
+}
+          button.btn.btn-info {
+            width: 60%;
+            border-radius: 36px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            letter-spacing: 0.5px;
+            background-color: rgba(39, 92, 111, 0.878) !important;
+            border: none;
+            padding: 15px;
+            color: white;
+          }
+   
+      p.white-text {
+        text-align: right;
+        font-size: 14px;
+        margin-bottom: 54px;
+        cursor: pointer;
+       
+    }
+    p.white-text:hover{
+        text-decoration: underline;
+    }
+
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container" id="login-wrap">
+            <div class="col-md-5 col-sm-10" id="content">
+                <h3>Sign In</h3>
+                <form>
+                    <div class="group">
+                        <input type="text" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Enter your email</label>
+                    </div>
+                    <div class="group">
+                        <input type="password" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label> Password</label>
+                    </div>
+                    <p class="white-text">
+                        <a>Forget your password</a>
+                    </p>
+                    <div id="submit_btn">
+                        <button type="button" class="btn btn-info">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
